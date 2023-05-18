@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
 					}
 					if($found==false){
 
-						$carpeta_destino = $_SERVER['DOCUMENT_ROOT'] . '../../htdocs/php2daw/tema5 bbdd/Usuarios registrados/fotos/'; 
+						$carpeta_destino = $_SERVER['DOCUMENT_ROOT'] . '../../htdocs/TFG//fotos/'; 
 
 	    				move_uploaded_file($_FILES['imagen']['tmp_name'],$carpeta_destino.$Foto_prod);//mover imagen a directorio temporal
 

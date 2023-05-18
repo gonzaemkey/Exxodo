@@ -16,20 +16,21 @@
 	<div class="wrap"> 
 		<p>Si usted ya esta registrado, puede acceder al inicio de sesion en Log In</p>
 		<!-- contenedor --> 
-	<form action=" " name="formulario" method="post"> <!-- Usamos el método post para recoger lo que seleccione el usuario en unas variables -->
+	   <form action=" " name="formulario" method="post"> <!-- Usamos el método post para recoger lo que seleccione el usuario en unas variables -->
 
-<!-- Placeholder es lo que le aparece al usuario en la web, name es como se llama la variable que recogeremos con post y type el tipo de datos que introduce el usuario -->
+     <!-- Placeholder es lo que le aparece al usuario en la web, name es como se llama la variable que recogeremos con post y type el tipo de datos que introduce el usuario -->
 		<!-- El nombre es un texto -->
-		<input type="text" placeholder="Nombre:" name="name" id="name">
+		<input type="text" placeholder="Nombre:" name="Nombre" id="Nombre">
 		<br>
 		<!-- El apellido es un texto -->
-		
+		<input type="text" placeholder="Apellido:" name="Apellido" id="Apellido">
+		<br>
 		<!-- El email es tipo email -->
-		<input type="email" placeholder="Email:" name="mail" id="email">
+		<input type="email" placeholder="Email:" name="Email" id="Email">
 		<br>
 		<br>
 		<!-- El password es un tipo password -->
-		<input type="password" placeholder="Contraseña:" name="password" id="password">
+		<input type="password" placeholder="Contraseña:" name="Password" id="Password">
 		<br>
 		
 		
