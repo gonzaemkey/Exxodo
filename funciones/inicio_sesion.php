@@ -1,20 +1,31 @@
 <?php 
 
 	session_start();
-	$_SESSION['usuario']=$Email;
-	$usuario=$_SESSION['usuario'];
+	$_SESSION['usuario_id']=$fila['Id'];
+	
+	$sql = "SELECT * FROM pedidos where id_usuario = '$_SESSION['usuario_id']' and estado = 'Incompleto' ";
 
-	 	
+	$connect = $conexion->query($sql);
 
-	echo  "Hola ". $usuario . ", has iniciado sesión.<br />";
+	if($connect->num_rows){ 
+				
+		$pedido = $connect->fetch_assoc();
+		$_SESSION['id_pedido'] = $pedido['id'];
+		$_SESSION['productos'] = $pedido['productos'];
 
-	// if(($usuario==null) || ($usuario=='')){ 
-	// 	echo '
-	// 	<script>
-	// 		alert("Acceso denegado.");
-	// 		window.location = "index.php";
-	// 	</script>	
-	// ';
-	// 	die();
- //    }
+	} else {
+
+		$insertar = "INSERT INTO pedidos(id_usuario, precio, productos, estado) values('$_SESSION['usuario_id']', 0, '', 'Incompleto') ";
+
+		$connect = $conexion->query($insertar);
+
+		$connect = $conexion->query($sql);
+		$pedido = $connect->fetch_assoc();
+		$_SESSION['id_pedido'] = $pedido['id'];
+		$_SESSION['productos'] = $pedido['productos'];
+
+	}
+	
+
+	
 ?>

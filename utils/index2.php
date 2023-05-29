@@ -5,6 +5,7 @@ $enviado=true;
 if (isset($_POST['submit'])) {
     $Email = $_POST['Email'];
    	$Pass = $_POST['Password'];
+	$Id = 0;
 	
    	
 
@@ -75,6 +76,7 @@ if (isset($_POST['submit'])) {
 						echo "Usted aún no se ha registrado";
 					}
 					else{
+						
                         echo 'Hola, bienvenido<br />';
 
 						include "../funciones/iniciar_sesion.php";

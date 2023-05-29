@@ -25,61 +25,29 @@
       padding: 25px;
     }
 
-    .textBox {
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  transition: 0.2s ease-in-out;
-  z-index: 2;
-}
-
-.textBox > .text {
-  font-weight: bold;
-}
-
-.textBox > .head {
-  font-size: 20px;
-}
-
-.textBox > .price {
-  font-size: 17px;
-}
-
-.textBox > span {
-  font-size: 12px;
-  color: lightgrey;
-}
-
-.card:hover > .textBox {
-  opacity: 1;
-}
-
-.card:hover > .img {
-  height: 65%;
-  filter: blur(7px);
-  animation: anim 3s infinite;
-}
-
-@keyframes anim {
-  0% {
-    transform: translateY(0);
+    .column-left {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+  }
+  
+  .column-right {
+    float: left;
+    width: 0%;
   }
 
-  50% {
-    transform: translateY(-20px);
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
-  100% {
-    transform: translateY(0);
-  }
+  img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
-.card:hover {
-  transform: scale(1);
-}
   </style>
 </head>
 <body>
@@ -117,39 +85,57 @@
   </div>
 </nav>
 
-<div align="center" id="productos">
-  <?php
-  for($j = 0; $j < count($lista); $j++){
-    
-      echo "
+<?php
 
-          <div class='card'>
-            <img class='img' src='../fotos/" .$lista[$j]['foto_prod']. "' />
-            <div class='textBox'>
-              <p class='text head'>" . $lista[$j]['nombre_prod'] . "</p>
-              <p class='text price'>" . $lista[$j]['precio_prod'] . "</p>
-              <button onclick='window.location.href=`producto.view.php?nombre=". $lista[$j]['nombre_prod']."`'> Ver producto</button>
-            </div>
-          </div>
+    include "../funciones/conexion.php";
 
-        ";
-        
+    $nombre = $_GET['nombre'];
+    $sql = "SELECT * from productos where nombre_prod = '$nombre'";
+
+    $connect = $conexion->query($sql);
 
     
-  }
-    
-  ?>
+    if($connect->num_rows){ 
+				
+					$producto = $connect->fetch_assoc();
+
+    }
+
+
+?>
+
+<div class="row">
+
+<div class="column-left" >
+
+    <img src="../fotos/<?php echo $producto['foto_prod'];   ?>">
+
 </div>
+
+<div class="column-left">
+
+    <h3><?php echo $producto['nombre_prod'];   ?> </h3>
+    <br>
+    <h4><?php echo $producto['precio_prod'];   ?> €</h4>
+
+    <form action="añadirCarrito.php">
+
+        <input type="number" name="unidades" placeholder="Cantidad" min="1">
+        <input type="hidden" name="nombre"  value="<?php echo $producto['nombre_prod']; ?>">
+
+        <input type="submit" name="submit" value="Añadir al carrito">
+
+    </form>
+
+</div>
+
+</div>
+
+
+
+
 
 <br></br>
-
-<div class="sobrenosotros" id="sobrenosostros">
-  <div class="container text-center">
-    <p> EXXODO es una empresa, cuya iniciativa es la creación de un estilo de vida, no solo de una simple marca de ropa. <br>
-        Esta represesnta las nuevas generaciones, representa el estilo urbano, pero que a su vez sea un producto de alta <br>
-        calidad. Nuestra intención es inspirar a las nuevas generaciones a expresarse libremente mediante su propio estilo.</p>
-  </div>
-</div>
 
 
 
@@ -162,3 +148,4 @@
 
 </body>
 </html>
+
