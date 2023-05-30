@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
 				
 						if($fila['Email']==$Email && $fila['Contraseña']==$Pass){
 							if($fila['Email']=='admin@admin.com'){
-								include "iniciar_sesion.php";
+								include "../funciones/inicio_sesion.php";
 
 								header("location: miWeb.admin.php");
 							}else{
@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
 						
                         echo 'Hola, bienvenido<br />';
 
-						include "../funciones/iniciar_sesion.php";
+						require("../funciones/inicio_sesion.php");
 
 						header("location: miWeb.php");
 					}	

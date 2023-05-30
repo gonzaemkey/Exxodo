@@ -25,66 +25,38 @@
       padding: 25px;
     }
 
-    .textBox {
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  transition: 0.2s ease-in-out;
-  z-index: 2;
-}
-
-.textBox > .text {
-  font-weight: bold;
-}
-
-.textBox > .head {
-  font-size: 20px;
-}
-
-.textBox > .price {
-  font-size: 17px;
-}
-
-.textBox > span {
-  font-size: 12px;
-  color: lightgrey;
-}
-
-.card:hover > .textBox {
-  opacity: 1;
-}
-
-.card:hover > .img {
-  height: 65%;
-  filter: blur(7px);
-  animation: anim 3s infinite;
-}
-
-@keyframes anim {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+    .card {
+ width: 12.5rem;
+ height: 17rem;
+ background-color: #212121;
+ border-radius: 1rem;
+ border: #212121 0.2rem solid;
+ transition: all 0.4s ease-in;
+ box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
+ color: white;
 }
 
 .card:hover {
-  transform: scale(1);
+ transform: translateY(-1.5rem);
+ border: #f2295bf0 0.2em solid;
+ border-radius: 2.5rem 0 2.5rem 0;
 }
 
 .tablas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+
+  /* .card2 {
+ width: 190px;
+ height: 254px;
+ border-radius: 30px;
+ background: #212121;
+ box-shadow: 15px 15px 30px rgb(25, 25, 25),
+             -15px -15px 30px rgb(60, 60, 60);
+} */
+
+
   </style>
 </head>
 <body>
@@ -108,10 +80,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#sobrenosostros">Sobre Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="carrito.view.php"><span class="glyphicon glyphicon-shopping-cart"></a></li>
+        <li><a href="miweb.php">Productos</a></li>
+        
+
 
 
       </ul>
@@ -122,38 +93,46 @@
   </div>
 </nav>
 
+
+<br></br>
+
+
 <div align="center" id="productos" class="tablas">
   <?php
-  for($j = 0; $j < count($lista); $j++){
-    
-      echo "
 
+  session_start();
+
+  $productos = explode('/', $_SESSION['productos']);
+  
+  for( $i = 0; $i < count($productos)-1; $i++){
+
+    $productos[$i] = explode('-', $productos[$i]);
+
+  
+      echo "
           <div class='card'>
-            <img class='img' src='../fotos/" .$lista[$j]['foto_prod']. "' />
-            <div class='textBox'>
-              <p class='text head'>" . $lista[$j]['nombre_prod'] . "</p>
-              <p class='text price'>" . $lista[$j]['precio_prod'] . "</p>
-              <button onclick='window.location.href=`producto.view.php?nombre=". $lista[$j]['nombre_prod']."`'> Ver producto</button>
-            </div>
+              <p class='text head'>" . $productos[$i][0] . "</p>
+              <p class='text price'>" . $productos[$i][1] . "</p>
+              <button onclick='window.location.href=`eliminarCarrito.php?nombre=". $productos[$i][0]."`'> Eliminar Producto del Carrito</button>
           </div>
 
         ";
         
 
     
-  }
+}
+
+require('calculoPrecio.php');
+
+    echo "
+
+      <div>
+          Precio total: ".$totalPrecio."
+      </div>
+
+    ";
     
   ?>
-</div>
-
-<br></br>
-
-<div class="sobrenosotros" id="sobrenosostros">
-  <div class="container text-center">
-    <p> EXXODO es una empresa, cuya iniciativa es la creación de un estilo de vida, no solo de una simple marca de ropa. <br>
-        Esta represesnta las nuevas generaciones, representa el estilo urbano, pero que a su vez sea un producto de alta <br>
-        calidad. Nuestra intención es inspirar a las nuevas generaciones a expresarse libremente mediante su propio estilo.</p>
-  </div>
 </div>
 
 

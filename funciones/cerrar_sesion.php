@@ -1,7 +1,12 @@
 <?php 
     session_start();
 
-    $sql = "UPDATE pedidos SET productos = '$_SESSION['productos']' WHERE id = '$_SESSION['id_pedido']'";
+    $productos = $_SESSION['productos'];
+    $pedido = $_SESSION['id_pedido'];
+
+    $sql = "UPDATE pedidos SET productos = '$productos' WHERE id = '$pedido'";
+
+    $conexion = new mysqli('localhost', 'root', '', 'tfg');
 
     $connect = $conexion->query($sql);
 

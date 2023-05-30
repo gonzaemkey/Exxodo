@@ -10,9 +10,10 @@ if(isset($_POST['submit'])) {
         
         session_start();
 
-        $_SESSION['productos'] .= $productoCompleto;
+        $_SESSION['productos'] = $_SESSION['productos'] . $productoCompleto;
 
-        
+
+        header('Location: miWeb.php');
         
 }
 

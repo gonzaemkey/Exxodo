@@ -71,9 +71,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#sobrenosostros">Sobre Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="miWeb.php">Productos</a></li>
         <li><a href=""><span class="glyphicon glyphicon-shopping-cart"></a></li>
 
 
@@ -118,9 +116,9 @@
     <br>
     <h4><?php echo $producto['precio_prod'];   ?> €</h4>
 
-    <form action="añadirCarrito.php">
+    <form action="añadirCarrito.php" method="post">
 
-        <input type="number" name="unidades" placeholder="Cantidad" min="1">
+        <input type="number" name="unidades" placeholder="Cantidad" min="1" default="1">
         <input type="hidden" name="nombre"  value="<?php echo $producto['nombre_prod']; ?>">
 
         <input type="submit" name="submit" value="Añadir al carrito">
