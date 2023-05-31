@@ -109,32 +109,34 @@
     $productos[$i] = explode('-', $productos[$i]);
 
   
-      echo "
-          <div class='card'>
-              <p class='text head'>" . $productos[$i][0] . "</p>
-              <p class='text price'>" . $productos[$i][1] . "</p>
-              <button onclick='window.location.href=`eliminarCarrito.php?nombre=". $productos[$i][0]."`'> Eliminar Producto del Carrito</button>
-          </div>
+        echo "
+            <div class='card'>
+                <p class='text head'>" . $productos[$i][0] . "</p>
+                <p class='text price'>" . $productos[$i][1] . "</p>
+                <button onclick='window.location.href=`eliminarCarrito.php?nombre=". $productos[$i][0]."`'> Eliminar Producto del Carrito</button>
+            </div>
 
-        ";
-        
+          ";
+          
 
-    
-}
+      
+  }
 
 require('calculoPrecio.php');
 
     echo "
 
       <div>
-          Precio total: ".$totalPrecio."
+          <span>Precio total: ".$totalPrecio."</span>
+          <br/>
+          <button onclick='window.location.href=`hacerPedido.php?precio=". $totalPrecio ." `'> Hacer Pedido</button>
+    
       </div>
 
     ";
     
   ?>
 </div>
-
 
 
 
