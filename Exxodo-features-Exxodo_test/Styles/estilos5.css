@@ -1,0 +1,137 @@
+#body {
+  font-family: Consolas, monospace;
+}
+
+#myJumbotron {
+  background: #4c5b5f url(../fotos/underground.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  margin-bottom: 0;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 25px;
+}
+
+.textBox {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.textBox > .text {
+  font-weight: bold;
+}
+
+.textBox > .head {
+  font-size: 20px;
+}
+
+.textBox > .price {
+  font-size: 17px;
+}
+
+.textBox > span {
+  font-size: 12px;
+  color: lightgrey;
+}
+
+.card:hover > .textBox {
+  opacity: 1;
+}
+
+.card:hover > .img {
+  height: 65%;
+  animation: anim 3s infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: scale(1);
+}
+
+.tablas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(255, 255, 255);
+}
+
+.sobrenosotros {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+}
+
+.sobrenosotros .container {
+  max-width: 1200px;
+}
+
+.sobrenosotros p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.sobrenosotros p:first-of-type {
+  margin-top: 0;
+}
+
+.sobrenosotros p:last-of-type {
+  margin-bottom: 0;
+}
+
+.container.text-center {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.container.text-center .btn {
+  width: 250px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #4c5b5f;
+  color: white;
+  padding: 25px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: #e40000;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
