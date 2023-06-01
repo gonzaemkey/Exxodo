@@ -1,0 +1,116 @@
+.login-dark {
+	height: 100vh;
+	background: #4c5b5f url(../fotos/underground.jpg);
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .login-dark form {
+	max-width: 320px;
+	width: 90%;
+	background-color: #fefeff;
+	padding: 40px;
+	border-radius: 4px;
+	transform: translateY(100%);
+	position: relative;
+	animation: slideUp 1s ease-in-out, bounce 1s 1s ease-in-out forwards;
+}
+
+.login-dark form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+  
+  .login-dark .illustration {
+	text-align:center;
+	padding:15px 0 20px;
+	font-size:100px;
+	color:#e40000;
+  }
+  
+  .login-dark form .form-control {
+	background:none;
+	border:none;
+	border-bottom:1px solid #465464;
+	border-radius:0;
+	box-shadow:none;
+	outline:none;
+	color:inherit;
+  }
+  
+  .login-dark form .btn-primary {
+	background:#e40000;
+	border:none;
+	border-radius:4px;
+	padding:11px;
+	box-shadow:none;
+	margin-top:26px;
+	text-shadow:none;
+	outline:none;
+  }
+  
+  .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+	background:#681b1b;
+	outline:none;
+  }
+  
+  .login-dark form .forgot {
+	display:block;
+	text-align:center;
+	font-size:12px;
+	color:#6f7a85;
+	opacity:0.9;
+	text-decoration:none;
+  }
+  
+  .login-dark form .forgot:hover, .login-dark form .forgot:active {
+	opacity:1;
+	text-decoration:none;
+  }
+  
+  .login-dark form .btn-primary:active {
+	transform:translateY(1px);
+  }
+
+  @keyframes slideUp {
+	0% {
+	  transform: translateY(100%);
+	}
+	60% {
+	  transform: translateY(-10%);
+	}
+	80% {
+	  transform: translateY(5%);
+	}
+	100% {
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+	  transform: translateY(0);
+	}
+	40% {
+	  transform: translateY(-20px);
+	}
+	60% {
+	  transform: translateY(-10px);
+	}
+  }
+  
+  .form-animation {
+	animation: slideUp 1s ease-in-out, bounce 1s 1s ease-in-out;
+  }
+  
+  
+  
