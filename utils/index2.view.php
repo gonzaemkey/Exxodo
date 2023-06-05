@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<!-- Página que ve el usuario -->
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Board form</title>
-	<style type="text/css">
-		H1 {Text-align:center} /*H1 alineado al centro de la página*/
-	</style>
-		<link rel="stylesheet" href=estilos4.css> <!--  link a los estilos css de todas las webs-->
-		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> <!-- fuente de texto de google font -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../Styles/estilos4.css">
 </head>
+
 <body>
-	<H1> LOG IN </H1> <!-- Titulo de la web -->
-	<div class="wrap"> 
-		<!-- contenedor --> 
-	<form action=" " name="formulario" method="post">
+    <div class="login-dark">
+        <form action=" " name="formulario" method="post" class="form-animation">
 
-
-		<input type="email" placeholder="Email:" name="Email" id="email">
-		<br>
-		<br>
-		<input type="password" placeholder="Contraseña:" name="Password" id="pass">
-		<br>
-
-		<input type="submit" name="submit" class="btn btn-primary" value="Iniciar Sesión">
-		<br>
-	</form>
-
-	<!-- Poner imagen en la web -->
-	<!--<img src="logo.jpg" alt="logo" alt="Logo" />-->
-	</div>
-
-
+            <h2 class="sr-only">Sign in Form</h2>
+            <div class="illustration"><img src="../fotos/logo_size.jpg"></i></div>
+            <div class="form-group"><input class="form-control" type="Email" name="Email" id="email" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="Password" name="Password" id="pass" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" name="submit">Log In</button></div>
+            <a href="../index.php" class="forgot">Sign In</a></form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -33,7 +33,6 @@ if (isset($_POST['submit'])) {
 	else{ //si todo ok
 
 
-	//conectamos con la base de datos que se llama 'prueba_datos'	
 				include "../funciones/conexion.php";
 
 
@@ -50,7 +49,6 @@ if (isset($_POST['submit'])) {
 						if($fila['nombre_prod']==$Nombre_prod){
 							$found=true;
 						
-							//echo  "Hola ". $fila[$Nombre_prod'] . ' este usuario ya se encuentra registrado<br />';
 					 	break;
 						}
 
@@ -66,17 +64,19 @@ if (isset($_POST['submit'])) {
 						$connect = $conexion->query($sql);
 							
 						if($conexion->affected_rows >= 1){ 
-									echo "El producto $Nombre_prod ha sido registrado con éxito.";
-									//session_start(); //Iniciamos una sesión del cliente
-									// session_destroy();
-
-
-//									$_SESSION['nombre'] = 'Vane';
+									echo "
+									<script>
+										alert('El producto $Nombre_prod ha sido registrado con éxito');
+									</script>
+									";
 						} 
 					}
-					else{echo  
-						"El producto ". $Nombre_prod . ' ya ha sido registrado <br />';
-						//header("location: index2.view.php");
+					else{
+						echo "
+									<script>
+										alert('El producto $Nombre_prod ya se encuentra registrado');
+									</script>
+									";
 					}	
 				}
 			else {

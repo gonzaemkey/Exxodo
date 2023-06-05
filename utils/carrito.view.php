@@ -4,66 +4,16 @@
   <title>EXXODO</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../Styles/estilos6.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    .jumbotron {
-      background: black;
-      color: white;
-      margin-bottom: 0;
-    }
-   
-    footer {
-      background-color: black;
-      color: white;
-      padding: 25px;
-    }
 
-    .card {
- width: 12.5rem;
- height: 17rem;
- background-color: #212121;
- border-radius: 1rem;
- border: #212121 0.2rem solid;
- transition: all 0.4s ease-in;
- box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
- color: white;
-}
-
-.card:hover {
- transform: translateY(-1.5rem);
- border: #f2295bf0 0.2em solid;
- border-radius: 2.5rem 0 2.5rem 0;
-}
-
-.tablas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* .card2 {
- width: 190px;
- height: 254px;
- border-radius: 30px;
- background: #212121;
- box-shadow: 15px 15px 30px rgb(25, 25, 25),
-             -15px -15px 30px rgb(60, 60, 60);
-} */
-
-
-  </style>
+  
 </head>
-<body>
+<body id="body">
 
-<div class="jumbotron">
+<div class="jumbotron" id="myJumbotron">
   <div class="container text-center">
-    <h1>EXXODO</h1>      
+  <img src="../fotos/logo-exxodo-nero.jpg" alt="Logo EXXODO">   
     <p>Future & Urban</p>
   </div>
 </div>
@@ -80,7 +30,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="miweb.php">Productos</a></li>
+        <li><a href="miWeb.php">Productos</a></li>
         
 
 
@@ -109,34 +59,34 @@
     $productos[$i] = explode('-', $productos[$i]);
 
   
-        echo "
-            <div class='card'>
-                <p class='text head'>" . $productos[$i][0] . "</p>
-                <p class='text price'>" . $productos[$i][1] . "</p>
-                <button onclick='window.location.href=`eliminarCarrito.php?nombre=". $productos[$i][0]."`'> Eliminar Producto del Carrito</button>
-            </div>
+      echo "
+          <div class='card'>
+              <p class='text head'>" . $productos[$i][0] . "</p>
+              <p class='text price'>" . $productos[$i][1] . "</p>
+              <button onclick='window.location.href=`eliminarCarrito.php?nombre=". $productos[$i][0]."`'> Delete</button>
+          </div>
 
-          ";
-          
+        ";
+        
 
-      
-  }
+    
+}
 
 require('calculoPrecio.php');
 
     echo "
 
       <div>
-          <span>Precio total: ".$totalPrecio."</span>
-          <br/>
+          Precio total: ".$totalPrecio."
+          <br>
           <button onclick='window.location.href=`hacerPedido.php?precio=". $totalPrecio ." `'> Hacer Pedido</button>
-    
       </div>
 
     ";
     
   ?>
 </div>
+
 
 
 

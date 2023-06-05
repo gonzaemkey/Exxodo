@@ -5,59 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../Styles/estilos5.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    .jumbotron {
-      background: black;
-      color: white;
-      margin-bottom: 0;
-    }
-   
-    footer {
-      background-color: black;
-      color: white;
-      padding: 25px;
-    }
-
-    .column-left {
-    float: left;
-    width: 50%;
-    padding-right: 10px;
-  }
   
-  .column-right {
-    float: left;
-    width: 0%;
-  }
-
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  img {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-  </style>
 </head>
-<body>
+<body id="body">
 
-<div class="jumbotron">
+<div class="jumbotron" id="myJumbotron">
   <div class="container text-center">
-    <h1>EXXODO</h1>      
+  <img src="../fotos/logo-exxodo-nero.jpg" alt="Logo EXXODO">      
     <p>Future & Urban</p>
   </div>
-</div>
+</div>  
 
 
 <nav class="navbar navbar-inverse">

@@ -4,94 +4,16 @@
   <title>EXXODO</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../Styles/estilos5.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    .jumbotron {
-      background: black;
-      color: white;
-      margin-bottom: 0;
-    }
-   
-    footer {
-      background-color: black;
-      color: white;
-      padding: 25px;
-    }
-
-    .textBox {
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  transition: 0.2s ease-in-out;
-  z-index: 2;
-}
-
-.textBox > .text {
-  font-weight: bold;
-}
-
-.textBox > .head {
-  font-size: 20px;
-}
-
-.textBox > .price {
-  font-size: 17px;
-}
-
-.textBox > span {
-  font-size: 12px;
-  color: lightgrey;
-}
-
-.card:hover > .textBox {
-  opacity: 1;
-}
-
-.card:hover > .img {
-  height: 65%;
-  filter: blur(7px);
-  animation: anim 3s infinite;
-}
-
-@keyframes anim {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.card:hover {
-  transform: scale(1);
-}
-
-.tablas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  </style>
+  
+ 
 </head>
-<body>
+<body id="body">
 
-<div class="jumbotron">
+<div class="jumbotron" id="myJumbotron">
   <div class="container text-center">
-    <h1>EXXODO</h1>      
+    <img src="../fotos/logo-exxodo-nero.jpg" alt="Logo EXXODO">     
     <p>Future & Urban</p>
   </div>
 </div>

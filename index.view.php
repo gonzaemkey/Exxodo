@@ -3,47 +3,31 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Board form</title>
-	<style type="text/css">
-		H1 {Text-align:center} /*H1 alineado al centro de la página*/
-	</style>
-		<link rel="stylesheet" href='utils/estilos4.css'> <!--  link a los estilos css de todas las webs-->
-		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> <!-- fuente de texto de google font -->
+	<title>Board form</title> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="Styles/estilos4.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> <!-- fuente de texto de google font -->
 </head>
 <body>
-	<H1> REGISTRO DE USUARIOS </H1> <!-- Titulo de la web -->
-	<br>
-	<div class="wrap"> 
-		<p>Si usted ya esta registrado, puede acceder al inicio de sesion en Log In</p>
+	<div class="login-dark"> 
+	
 		<!-- contenedor --> 
-	   <form action=" " name="formulario" method="post"> <!-- Usamos el método post para recoger lo que seleccione el usuario en unas variables -->
+		<form action=" " name="formulario" method="post" class="form-animation">
+ 		<!-- Usamos el método post para recoger lo que seleccione el usuario en unas variables -->
 
      <!-- Placeholder es lo que le aparece al usuario en la web, name es como se llama la variable que recogeremos con post y type el tipo de datos que introduce el usuario -->
 		<!-- El nombre es un texto -->
-		<input type="text" placeholder="Nombre:" name="Nombre" id="Nombre">
-		<br>
-		<!-- El apellido es un texto -->
-		<input type="text" placeholder="Apellido:" name="Apellido" id="Apellido">
-		<br>
-		<!-- El email es tipo email -->
-		<input type="email" placeholder="Email:" name="Email" id="Email">
-		<br>
-		<br>
-		<!-- El password es un tipo password -->
-		<input type="password" placeholder="Contraseña:" name="Password" id="Password">
-		<br>
+		<h2 class="sr-only">Sign in Form</h2>
+            <div class="illustration"><img src="fotos/logo_size.jpg"></i></div>
+			<div class="form-group"><input class="form-control" type="Nombre" name="Nombre" placeholder="Name"></div>
+			<div class="form-group"><input class="form-control" type="Apellido" name="Apellido" placeholder="Surname"></div>
+            <div class="form-group"><input class="form-control" type="Email" name="Email" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="Password" name="Password" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" name="submit">Sign In</button></div>
+			<a href="utils/index2.php" class="forgot">Log In</a>
 		
-		
+		</form>
 	
-
-		<input type="submit" name="submit" class="btn btn-primary" value="Registrarse">
-		<br>
-		 <!-- boton para enviar los datos -->
-	</form>
-
-	<a class="login" href="utils/index2.php">Log In</a>
-	<!-- Poner imagen en la web -->
-	<!--<img src="logo.jpg" alt="logo" alt="Logo" />-->
 	</div>
 
 
