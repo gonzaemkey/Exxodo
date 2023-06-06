@@ -91,8 +91,13 @@ if (isset($_POST['submit'])) {
 //									$_SESSION['nombre'] = 'Vane';
 						} 
 					}
-					else{echo  
-						"Hola ". $Nombre . ' este usuario ya se encuentra registrado, pulse el botón de Log In <br />';
+					else{
+						echo  
+						"
+						<script>
+							alert('Hola $Nombre este usuario ya se encuentra registrado, pulse el botón de Log In')
+						</script>
+						";
 						//header("location: index2.view.php");
 					}	
 				}
@@ -103,6 +108,3 @@ if (isset($_POST['submit'])) {
 	}
 
 require 'index.view.php'; //llamamos a la web en html
-
-
-?>

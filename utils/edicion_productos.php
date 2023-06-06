@@ -75,7 +75,11 @@ if (isset($_POST['submit'])) {
 						} 
 					}
 					else{echo  
-						"El producto ". $Nombre_prod . ' ya ha sido registrado <br />';
+						"
+									<script>
+										alert('El producto $Nombre_prod ya se encuentra registrado');
+									</script>
+									";
 						//header("location: index2.view.php");
 					}	
 				}

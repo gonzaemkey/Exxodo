@@ -26,7 +26,12 @@ include '../funciones/conexion.php';
 	$_SESSION['id_pedido'] = $pedido['id'];
 	$_SESSION['productos'] = $pedido['productos'];
 
-    header('Location: miWeb.php');
+    echo "
+        <script>
+            alert('El pedido se ha realizado con éxito');
+            window.location.href = 'miWeb.php';
+        </script>
+    ";
     
 
 

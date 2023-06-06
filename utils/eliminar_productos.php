@@ -55,7 +55,11 @@ if (isset($_POST['submit'])) {
 						} 
 					}
 					else{echo  
-						"El producto ". $Nombre_prod . 'no existe dentro de la base de datos <br />';
+						"
+						<script>
+							alert('El producto $Nombre_prod no existe dentro de la base de datos');
+						</script>
+						";
 						//header("location: index2.view.php");
 					}	
 				}
