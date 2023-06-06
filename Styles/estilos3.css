@@ -1,0 +1,39 @@
+#body{
+    font-family: Consolas, monospace;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+.wrap {
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px;
+}
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    margin-top: 10%;
+    color: white;
+    cursor: pointer;
+}
+.admin {
+    display: block;
+    text-align: center;
+    color: #337ab7;
+    text-decoration: none;
+}
+.admin:hover {
+    text-decoration: underline;
+
+}
+

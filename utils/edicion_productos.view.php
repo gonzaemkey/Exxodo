@@ -7,11 +7,12 @@
     <style type="text/css">
 		H1 {Text-align:center} /*H1 alineado al centro de la página*/
 	</style>
-		<link rel="stylesheet" href=estilos4.css> <!--  link a los estilos css de todas las webs-->
+		<link rel="stylesheet" href="../Styles/estilos3.css"> <!--  link a los estilos css de todas las webs-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
     <title>Document</title>
 </head>
-<body>
+<body id="body">
     <h1>Añadir productos</h1>
     <div class="wrap"> 
 		<!-- contenedor --> 
