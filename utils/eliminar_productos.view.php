@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="../Styles/estilos3.css"> <!--  link a los estilos css de todas las webs-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> <!--  link a los estilos css de todas las webs-->
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
-    <title>Document</title>
+    <title>Delete Products</title>
 </head>
 <body id="body">
     <h1>Eliminar productos</h1>
