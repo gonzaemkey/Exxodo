@@ -73,7 +73,12 @@ if (isset($_POST['submit'])) {
 
 					}
 					if($found==false){
-						echo "Usted aún no se ha registrado";
+						echo  "
+						<script>
+							alert('Usted aun no está registrado')
+						</script>
+						
+						";
 					}
 					else{
 						
