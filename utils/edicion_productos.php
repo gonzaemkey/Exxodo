@@ -33,6 +33,7 @@ if (isset($_POST['submit'])) {
 	else{ //si todo ok
 
 
+	//conectamos con la base de datos 	
 				include "../funciones/conexion.php";
 
 
@@ -49,6 +50,7 @@ if (isset($_POST['submit'])) {
 						if($fila['nombre_prod']==$Nombre_prod){
 							$found=true;
 						
+							
 					 	break;
 						}
 
@@ -66,17 +68,18 @@ if (isset($_POST['submit'])) {
 						if($conexion->affected_rows >= 1){ 
 									echo "
 									<script>
-										alert('El producto $Nombre_prod ha sido registrado con éxito');
-									</script>
-									";
+										alert('El producto $Nombre_prod se ha registrado correctamente');
+									</script>";
+									
 						} 
 					}
-					else{
-						echo "
+					else{echo  
+						"
 									<script>
 										alert('El producto $Nombre_prod ya se encuentra registrado');
 									</script>
 									";
+						//header("location: index2.view.php");
 					}	
 				}
 			else {

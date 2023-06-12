@@ -45,12 +45,12 @@
 
 <?php
 
-    include "../funciones/conexion.php";
+    include "../funciones/conexion.php"; //hacemos la conexión con la BBDD
 
-    $nombre = $_GET['nombre'];
-    $sql = "SELECT * from productos where nombre_prod = '$nombre'";
+    $nombre = $_GET['nombre']; //recibimmos el nombre del producto por un query parameter 
+    $sql = "SELECT * from productos where nombre_prod = '$nombre'";//hacemos la consulta para traer la info del producto
 
-    $connect = $conexion->query($sql);
+    $connect = $conexion->query($sql);//la ejecutamos
 
     
     if($connect->num_rows){ 
@@ -66,22 +66,22 @@
 
 <div class="column-left" >
 
-    <img src="../fotos/<?php echo $producto['foto_prod'];   ?>">
+    <img src="../fotos/<?php echo $producto['foto_prod'];   ?>"> <!--aqui se presenta la imagen del producto -->
 
 </div>
 
 <div class="column-left">
 
-    <h3><?php echo $producto['nombre_prod'];   ?> </h3>
-    <br>
-    <h4><?php echo $producto['precio_prod'];   ?> €</h4>
+    <h3><?php echo $producto['nombre_prod'];   ?> </h3> <!--aqui se presenta el nombre del producto -->
+    <br> 
+    <h4><?php echo $producto['precio_prod'];   ?> €</h4> <!--aqui se presenta el precio del producto -->
 
     <form action="añadirCarrito.php" method="post">
 
-        <input type="number" name="unidades" placeholder="Cantidad" min="1" default="1">
-        <input type="hidden" name="nombre"  value="<?php echo $producto['nombre_prod']; ?>">
+        <input type="number" name="unidades" placeholder="Cantidad" min="1" default="1"> <!-- en este imput se recoje la cantidad que el cliente quiere pedir -->
+        <input type="hidden" name="nombre"  value="<?php echo $producto['nombre_prod']; ?>"><!-- aqui tenemos oculto el monbre para llevarnoslo para hacerla logica -->
 
-        <input type="submit" name="submit" value="Añadir al carrito">
+        <input type="submit" name="submit" value="Añadir al carrito"> <!-- boton submit praa añadirlo al carrito -->
 
     </form>
 

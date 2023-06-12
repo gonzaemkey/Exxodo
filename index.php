@@ -1,6 +1,7 @@
 <?php
 $errores = '';
 $enviado=true;
+// Comprobamos que el formulario haya sido enviado con las variables que hayamos puesto en index.view, deben llamarse igual!
 if (isset($_POST['submit'])) {
 	$Nombre = $_POST['Nombre'];
 	$Apellido = $_POST['Apellido'];
@@ -9,16 +10,17 @@ if (isset($_POST['submit'])) {
 	
    	
 
-   	if (!empty($Nombre)) { 
+   	if (!empty($Nombre)) { //podemos combrobar con el apellido también
 
-		$Nombre = filter_var($Nombre, FILTER_SANITIZE_SPECIAL_CHARS);
+		$Nombre = filter_var($Nombre, FILTER_SANITIZE_SPECIAL_CHARS);//limpia o verifica que es un texto
+		//echo $Nombre;
 		
 	} else {
 		$errores .= 'Por favor ingresa un nombre <br />';
 		$enviado=false;
 	}
 
-	if (!empty($Email)) { 
+	if (!empty($Email)) { //comprobamos que es un email válido y que lo ha enviado
 		$Email = filter_var($Email, FILTER_SANITIZE_EMAIL);
 
 		if (!filter_var($Email, FILTER_VALIDATE_EMAIL)){
@@ -38,20 +40,32 @@ if (isset($_POST['submit'])) {
 		$Pass = crypt($Pass,'rl');
 	}
 
-	
+	// if(!empty($Pass)){
 
-	if($enviado==false){
+	// }else{
+	// 	$errores .= "Por favor, ingrese una contraseña <br />";
+	// 	$enviado=false;
+
+	// }
+
+	if($enviado==false){ //lanzamos los errores que hayan podido ocurrir
 		echo "$errores";
 	}
 
-	else{ 
+	else{ //si todo ok
+
+
+	//conectamos con la base de datos	
 				include "funciones/conexion.php";
 
 
-				$sql = "SELECT * FROM usuarios"; 
-				$connect = $conexion->query($sql); 
+				$sql = "SELECT * FROM usuarios"; //Traemos los elementos de la base de datos
 	
-				if($connect->num_rows){ 
+				$connect = $conexion->query($sql); //La conexión se ejecuta
+	
+				if($connect->num_rows){ //Con este condicional vamos a comprobar que hay datos en la base de datos
+		
+		//El método fetch_assoc trae la información del elemento de cada fila que queramos
 					$found=false;
 					while($fila = $connect->fetch_assoc()){
 				
@@ -72,18 +86,17 @@ if (isset($_POST['submit'])) {
 									<script>
 										alert('Hola, $Nombre te has registrado con éxito.')
 									</script>
-									
 									";
 									
 						} 
 					}
 					else{
-						echo "
+						echo  
+						"
 						<script>
 							alert('Hola $Nombre este usuario ya se encuentra registrado, pulse el botón de Log In')
 						</script>
 						";
-						
 					}	
 				}
 			else {
@@ -92,7 +105,4 @@ if (isset($_POST['submit'])) {
 		}	
 	}
 
-require 'index.view.php'; 
-
-
-?>
+require 'index.view.php'; //llamamos a la web en html

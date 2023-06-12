@@ -1,7 +1,6 @@
 <?php
 $errores = '';
 $enviado=true;
-// Comprobamos que el formulario haya sido enviado con las variables que hayamos puesto en index.view, deben llamarse igual!
 if (isset($_POST['submit'])) {
     $Email = $_POST['Email'];
    	$Pass = $_POST['Password'];
@@ -44,7 +43,7 @@ if (isset($_POST['submit'])) {
 	else{ //si todo ok
 
 
-	//conectamos con la base de datos que se llama 'prueba_datos'	
+	//conectamos con la base de datos 	
 				include "../funciones/conexion.php";
 		
 				$sql = "SELECT * FROM usuarios"; //Traemos los elementos de la base de datos
@@ -67,7 +66,6 @@ if (isset($_POST['submit'])) {
 							}
 							
 						
-							//echo  "Hola ". $fila['Nombre'] . ' este usuario ya se encuentra registrado<br />';
 					 	break;
 						}
 

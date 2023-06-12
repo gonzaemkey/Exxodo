@@ -50,18 +50,21 @@
 <div align="center" id="productos" class="tablas">
   <?php
 
-  session_start();
+  session_start(); //iniciamos sesion 
 
-  $productos = explode('/', $_SESSION['productos']);
+  /*del array SESSION, separamos cada producto por la /, quedando separados cada producto en una posición
+  solo con el nombre y la cantidad separadas por un -*/
+  $productos = explode('/', $_SESSION['productos']); 
   
-  for( $i = 0; $i < count($productos)-1; $i++){
+  for( $i = 0; $i < count($productos)-1; $i++){//bucle para mostrar los productos
 
-    $productos[$i] = explode('-', $productos[$i]);
+    $productos[$i] = explode('-', $productos[$i]);// separamos la cantidad del nombre(cantidad se usará para calcular el precio final)
 
   
+    //cada producto tiene su propia cartacon el nombre, el precio, y un botón para eliminarlo del carrito si lo desea
       echo "
           <div class='card'>
-              <p class='text head'>" . $productos[$i][0] . "</p>
+              <p class='text head'>" . $productos[$i][0] . "</p> 
               <p class='text price'>" . $productos[$i][1] . "</p>
               <button onclick='window.location.href=`eliminarCarrito.php?nombre=". $productos[$i][0]."`'> Delete</button>
           </div>
@@ -72,8 +75,9 @@
     
 }
 
-require('calculoPrecio.php');
+require('calculoPrecio.php');//para calcular el precio
 
+//se muestra el precio y el boton para realizar el pedido
     echo "
 
       <div>

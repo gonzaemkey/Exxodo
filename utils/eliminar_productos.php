@@ -15,15 +15,16 @@ if (isset($_POST['submit'])) {
 
 
 
-	else{ 
+	else{ //si todo ok
 
 
+	//conectamos con la base de datos 	
 				include "../funciones/conexion.php";
 
 
-				$sql = "SELECT * FROM productos"; 
+				$sql = "SELECT * FROM productos"; //Traemos los elementos de la base de datos
 	
-				$connect = $conexion->query($sql); 
+				$connect = $conexion->query($sql); //La conexión se ejecuta
 	
 				if($connect->num_rows){ //Con este condicional vamos a comprobar que hay datos en la base de datos
 		
@@ -34,7 +35,6 @@ if (isset($_POST['submit'])) {
 						if($fila['nombre_prod']==$Nombre_prod){
 							$found=true;
 						
-							
 					 	break;
 						}
 
@@ -45,19 +45,19 @@ if (isset($_POST['submit'])) {
 						$connect = $conexion->query($sql1);
 							
 						if($conexion->affected_rows >= 1){ 
-									echo "
-									<script>
-										alert('El producto $Nombre_prod ha sido eliminado de la base de datos');
-									</script>
-									";
+									echo "<script>
+											alert('El producto $Nombre_prod ha sido eliminado correctamente');
+										</script>";
+									
 						} 
 					}
-					else{
-						echo "
+					else{echo  
+						"
 						<script>
 							alert('El producto $Nombre_prod no existe dentro de la base de datos');
 						</script>
 						";
+						//header("location: index2.view.php");
 					}	
 				}
 			else {
