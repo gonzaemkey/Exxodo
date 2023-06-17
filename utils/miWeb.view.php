@@ -54,7 +54,7 @@
             <img class='img' src='../fotos/" .$lista[$j]['foto_prod']. "' />
             <div class='textBox'>
               <p class='text head'>" . $lista[$j]['nombre_prod'] . "</p>
-              <p class='text price'>" . $lista[$j]['precio_prod'] . "</p>
+              <p class='text price'>" . $lista[$j]['precio_prod'] .  "€</p>
               <button onclick='window.location.href=`producto.view.php?nombre=". $lista[$j]['nombre_prod']."`'> Ver producto</button>
             </div>
           </div>
